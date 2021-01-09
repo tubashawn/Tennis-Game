@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+}
+
+/* #gameCanvas {
+    position: relative; 
+	display: block; 
+	margin: 0px; 
+} */
+
+container { 
+	text-align: center; 
+} 
+
+#testText {
+    font-size: 40px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green; 
+    padding: 10px;
+}
