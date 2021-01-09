@@ -1,18 +1,6 @@
 const WINNING_SCORE = 3;
 const FRAMES_PER_SECOND = 60;
 
-let ball = new Ball(50, 50, 5, 5, 10);
-let paddleOne = new Paddle(0, 100, 80, 10, 'white', 0);
-let paddleTwo = new Paddle(0, 100, 80, 10, 'purple', 3);
-let playerOneScore = 0;
-let playerTwoScore = 0;
-let showWinScreen = false;
-let isPaused = false;
-let isStartScreen = true;
-
-let canvas = document.getElementById("gameCanvas");
-let canvasContext = canvas.getContext("2d");
-        
 /* #region  ball and paddle classes */
 class Ball {
     constructor(x, y, speedX, speedY, radius) {
@@ -45,14 +33,22 @@ class Paddle {
 }
 /* #endregion */
 
+let ball = new Ball(50, 50, 5, 5, 10);
+let paddleOne = new Paddle(0, 100, 80, 10, 'white', 0);
+let paddleTwo = new Paddle(0, 100, 80, 10, 'purple', 3);
+let playerOneScore = 0;
+let playerTwoScore = 0;
+let showWinScreen = false;
+let isPaused = false;
+let isStartScreen = true;
+
+let canvas = document.getElementById("gameCanvas");
+let canvasContext = canvas.getContext("2d");
+        
+
+
 //set right paddleto be on the screen
 paddleTwo.x = canvas.width - 10;
-
-//set the motion on the canvas
-setInterval(function() { 
-    moveEverything();
-    drawEverything();
-}, 1000/framesPerSecond);
 
 //events handlers
 canvas.addEventListener("click", handleMouseClick);
@@ -224,3 +220,9 @@ function messageScreen() {
     canvasContext.fillText("Paused!", (canvas.width/2) - 100, 200);
     canvasContext.fillText("Click to continue", (canvas.width/2) - 100, 220);
 }
+
+//set the motion on the canvas
+setInterval(function() { 
+    moveEverything();
+    drawEverything();
+}, 1000/FRAMES_PER_SECOND);
