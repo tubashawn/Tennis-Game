@@ -2,13 +2,14 @@ body {
     background-color: lightblue;
 }
 
-/* #gameCanvas {
+#gameCanvas {
     position: relative; 
-	display: block; 
+	display: inline; 
 	margin: 0px; 
-} */
+}
 
-container { 
+#container { 
+    width: 100%;
 	text-align: center; 
 } 
 
