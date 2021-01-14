@@ -226,3 +226,6 @@ setInterval(function() {
     moveEverything();
     drawEverything();
 }, 1000/FRAMES_PER_SECOND);
+
+
+// add power ups and downgrades
